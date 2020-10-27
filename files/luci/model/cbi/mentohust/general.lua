@@ -1,8 +1,13 @@
+-- html constants
+font_red = [[<font color="red">]]
+font_blue = [[<font color="green">]]
+font_off = [[</font>]]
+
 local function is_running(name)
     if luci.sys.call("pidof %s >/dev/null" %{name}) == 0 then
-        return translate("RUNNING")
+        return font_blue .. translate("✔") .. font_off
     else
-        return translate("NOT RUNNING")
+        return font_red .. translate("✘") .. font_off
     end
 end
 
@@ -11,9 +16,9 @@ local function is_online(ipaddr)
         return translate("Pinghost not set")
     end
     if luci.sys.call("ping -c1 -W1 %s >/dev/null 2>&1" %{ipaddr}) == 0 then
-        return translate("ONLINE")
+        return font_blue .. translate("✔") .. font_off
     else
-        return translate("NOT ONLINE")
+        return font_red .. translate("✘") .. font_off
     end
 end
 
