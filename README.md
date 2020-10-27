@@ -31,9 +31,7 @@ OpenWrt/LEDE LuCI for MentoHUST
 
 依赖
 ---
-
-软件包不显式依赖二进制文件 `mentohust`.
-可通过编译安装 [MentoHUST-OpenWrt-ipk](https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk) 获得.  
+ 
 只有当文件存在时, 相应的功能才可被使用, 并显示相应的 LuCI 设置界面.  
 **请注意：mentohust 二进制文件必须支持所有参数。如：-u -p -n -i -m -g -s -o -t -e -r -a -d -b -y -f -c -w**  
 
@@ -58,7 +56,7 @@ OpenWrt/LEDE LuCI for MentoHUST
 tar xjf lede-sdk-17.01.4-ramips-mt7620_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.bz2
 cd lede-sdk-*
 # Clone 项目
-git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
+git clone https://github.com/tuanqing/luci-app-mentohust.git package/luci-app-mentohust
 # 编译 po2lmo (如果有po2lmo可跳过)
 git clone https://github.com/openwrt-dev/po2lmo.git
 pushd po2lmo
