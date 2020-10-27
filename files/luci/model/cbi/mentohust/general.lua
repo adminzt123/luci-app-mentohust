@@ -55,7 +55,7 @@ for k, v in ipairs(luci.sys.net.devices()) do
 end
 
 pinghost = o:taboption("base", Value, "pinghost", translate("PingHost"), translate("Ping host for drop detection, 0.0.0.0 to turn off this feature"))
-pinghost.default = "0.0.0.0"
+pinghost.default = "114.114.114.114"
 
 ipaddr = o:taboption("advanced", Value, "ipaddr", translate("IP Address"), translate("Your IPv4 Address. (DHCP users can set to 0.0.0.0)"))
 ipaddr.default = "0.0.0.0"
@@ -82,7 +82,7 @@ startmode = o:taboption("advanced", ListValue, "startmode", translate("StartMode
 startmode:value(0, translate("Standard"))
 startmode:value(1, translate("Ruijie"))
 startmode:value(2, translate("Uses MentoHUST for Xaar certification"))
-startmode.default = "0"
+startmode.default = "1"
 
 dhcpmode = o:taboption("advanced", ListValue, "dhcpmode", translate("DhcpMode"), translate("DHCP method"))
 dhcpmode:value(0, translate("None"))
@@ -101,7 +101,7 @@ datafile = o:taboption("advanced", Value, "datafile", translate("DataFile"), tra
 datafile.default = "/etc/mentohust/"
 
 dhcpscript = o:taboption("advanced", Value, "dhcpscript", translate("DhcpScript"), translate("DHCP script"))
-dhcpscript.default = "udhcpc -i"
+dhcpscript.default = ""
 
 local apply = luci.http.formvalue("cbi.apply")
 if apply then
