@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-mentohust
-PKG_VERSION=1.1.1
+PKG_VERSION=1.1.2
 PKG_RELEASE:=0
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -14,6 +14,7 @@ define Package/luci-app-mentohust
 	SUBMENU:=3. Applications
 	TITLE:=MentoHUST 802.1X Client for LuCI
 	PKGARCH:=all
+	DEPENDS:=+mentohust
 endef
 
 define Package/luci-app-mentohust/description
